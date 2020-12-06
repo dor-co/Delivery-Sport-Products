@@ -1,0 +1,493 @@
+<style>
+.welcomePageBtn:hover{
+  /*the color the background will change to after hover*/
+  background: #3FCFF3;
+  /*the color the text will change to after hover*/
+  color: white;
+  /*the time the change take*/
+  transition: .5s;
+}
+
+.close-btn:hover{
+  background:#2ABBE9;
+  color: white;
+  transition: .5s;
+}
+
+.shopNowBtn:hover{
+  background: #3FCFF3;
+  color: white;
+  transition: .5s;
+}
+
+.saveBtn:hover{
+  background: #3FCFF3;
+  color: white;
+  transition: .5s;
+}
+
+.changeShippingLocationBtn:hover{
+  color: #0986DE;
+  transition: .5s;
+}
+
+.cancelBtn:hover{
+  background:#F03232;
+  color: white;
+  transition: .5s;
+}
+
+.chooseCountryBox:hover{
+  background:#CBCBCC;
+  color: black;
+  transition: .5s;
+}
+
+.chooseCurrencyBtn:hover{
+  background:#CBCBCC;
+  color: black;
+  transition: .5s;
+}
+
+.popup1 .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+
+.popup1 .content {
+  border: 5px solid #000153;
+  position:absolute;
+  top:50%;
+  left:50%;
+  /*translate is from where the popup is open. like this from the center.*/
+  transform:translate(-50%,-50%) scale(0);
+  background:#ffffff;
+  width:650px;
+  height:550px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  font-family:"Open Sans",sans-serif;
+}
+
+/*this is the 'close-button' design*/
+.popup1 .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+
+.popup1.active .overlay {
+  display:block;
+}
+
+.popup1.active .content {
+  /*this is the fade time that the popup open*/
+  transition:all 300ms ease-in-out;
+  /*translate is the location of the popup. like this is the center.
+  scale is the zoom of the popup*/
+  transform:translate(-50%,-50%) scale(1);
+}
+
+.popup2 .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+
+.popup2 .content {
+  border: 5px solid #000153;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#ffffff;
+  width:650px;
+  height:550px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  font-family:"Open Sans",sans-serif;
+}
+
+/*this is the 'close-button' design*/
+.popup2 .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+
+.popup2.active .overlay {
+  display:block;
+}
+
+.popup2.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+
+.popup3 .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+
+.popup3 .content {
+  border: 5px solid #000153;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#ffffff;
+  width:650px;
+  height:550px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  font-family:"Open Sans",sans-serif;
+}
+
+/*this is the 'close-button' design*/
+.popup3 .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+
+.popup3.active .overlay {
+  display:block;
+}
+
+.popup3.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+
+.popup4 .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+
+.popup4 .content {
+  border: 5px solid #000153;
+  border-top-width: 100px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#ffffff;
+  width:650px;
+  height:550px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  font-family:"Open Sans",sans-serif;
+}
+
+/*this is the 'close-button' design*/
+.popup4 .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+
+.popup.active4 .overlay {
+  display:block;
+}
+
+.popup4.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+
+.popup5 .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+
+.popup5 .content {
+  border: 5px solid #000153;
+  border-top-width: 100px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#ffffff;
+  width:650px;
+  height:550px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  font-family:"Open Sans",sans-serif;
+}
+
+/*this is the 'close-button' design*/
+.popup5 .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+
+.popup5.active .overlay {
+  display:block;
+}
+
+.popup5.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+
+.welcomePageBtn{
+  border: 0px;
+  background: #2ABBE9;
+  padding: 12px 120px;
+  font-size: 15px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.shopNowBtn{
+  border: 0px;
+  background: #2ABBE9;
+  padding: 12px 120px;
+  font-size: 15px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.changeShippingLocationBtn{
+  border: 0px;
+  background: #ffffff;
+  padding: 12px 52px;
+  font-size: 15px;
+  color: #000153;
+  cursor: pointer;
+}
+
+.saveBtn{
+  border: 0px;
+  background: #2ABBE9;
+  padding: 12px 120px;
+  font-size: 15px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.cancelBtn{
+  border: 0px;
+  background: #ffffff;
+  padding: 12px 50px;
+  font-size: 15px;
+  color: #000153;
+  cursor: pointer;
+}
+
+.chooseCountryBox{
+  border: 0px;
+  background: #DBE2E4;
+  padding: 12px 50px;
+  font-size: 15px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.chooseCurrencyBtn{
+  border: 0px;
+  background: #DBE2E4;
+  padding: 12px 50px;
+  font-size: 15px;
+  color: #000000;
+  cursor: pointer;
+}
+
+
+</style>
+
+<!--welcome page, button to 'shop now', and button to 'change shipping location'-->
+<div class="popup1" id="popup-1">
+  <div class="overlay"></div>
+  <div class="content">
+    <!--<div class="close-btn" onclick="welcomePagePopup()">&times;</div>-->
+    <h1 align="left" style="font-family:Open Sans; color:#000153;">SPURS SHOP</h1>
+    <h2 align="left" style="color:#000153">WE SHIP TO IRELAND</h2>
+    <h2 align="left" style="color:#000153">(REPUBLIC OF)</h2>
+    <h4 align="left">Welcome!</h4>
+    <h4 align="left">You can easily:
+    <li align="left">Enjoy Great Shipping Rates</li>
+    <li align="left">Shop in your local currency</li>
+    <li align="left">Pay safely with local payment options</li>
+    </h4>
+    <button class="shopNowBtn" style="float:left" onclick="welcomePagePopup()"><b>SHOP NOW</b></button>
+    <br></br>
+    <button class="changeShippingLocationBtn"style="float:left" onclick="changeShippingLocationPopup()"><u>CHANGE SHIPPING LOCATION</u></button>
+      <img src ="Harry-Kane.png" style="position:absolute; top:24px; left:360px" align="right" alt="harry-kane" width="270px"/>
+  </div>
+</div>
+
+<!--change shipping location page, there are 2 combo-box to select country and currency, and button to close the page 'X'-->
+<div class="popup4" id="popup-4">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="close-btn" onclick="changeShippingLocationPopup()" style="position:absolute; top:-90; right:7">&times;</div>
+    <img src ="WhiteLogo.png" style="position: absolute; top:-90"  align="center" alt="tot" width="42px"/>
+    <h2 align="center" style="color:#000153">Now shipping worldwide!</h2>
+    <h4 align="center">CHANGE SHIPPING LOCATION</h4>
+    <select class="chooseCountryBox" id="countrySelect">
+      <option disable hidden selected>-choose country-</option>
+      <option value="Israel">Israel</option>
+      <option value="United states">United states</option>
+      <option value="United kingdom">United kingdom</option>
+      </select>    
+    <br></br>
+    <h4 align="center">CHANGE CURRENCY</h4>
+    <select class="chooseCurrencyBtn" id="currencySelect">
+      <option disable hidden selected>-choose currency-</option>
+      <option value="NIS">NIS</option>
+      <option value="Euro">Euro</option>
+      <option value="USD">USD</option>
+      </select>
+      <br></br>
+          <button class="saveBtn" id="saveButton" onclick="savePopup(); countrySelect(); currencySelect();"><b>SAVE</b></button>
+      <br></br>
+          <button class="cancelBtn" id="cancelButton" onclick="changeShippingLocationPopup()"><u>CANCEL</u></button>    </div>
+  </div>
+
+<!--saved details page, the chooses you made in change shipping location page will show in this page-->
+<div class="popup5" id="popup-5">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="close-btn" onclick="savePopup()" style="position:absolute; top:-90; right:7">&times;</div>
+    <img src ="WhiteLogo.png" style="position: absolute; top:-90"  align="center" alt="tot" width="42px"/>
+    <h2 style="font-family:Open Sans; color:#000153;">SAVED DETAILS</h2> 
+    <br></br>
+    <text style="color:#000000"><b>The choosen country:</b></text>
+    <p id ="demo1" style="color:#000000"></p> 
+    <br></br>
+    <text style="color:#000000"><b>The choosen currency:</b></text>
+    <p id="demo2" style="color:#000000"></p>
+    </div>
+  </div>
+
+<!--menu page, button to 'welcome page', and button to 'country switcher' page-->
+<body style="background-color:#D3D7D8">
+<center>
+<h1 style="font-family:Open Sans; color:#000153;">MENU</h1>
+<br></br>
+<button class="welcomePageBtn" onclick="welcomePagePopup()"><b>WELCOME PAGE</b></button>
+<br></br>
+<!--<button onclick="countrySwitcherPopup()">country switcher</button>
+<br></br>-->
+<img src ="WhiteLogo.png" width="150px" alt="tot"/>
+</center>
+</body>
+
+<script>
+function welcomePagePopup(){
+  document.getElementById("popup-1").classList.toggle("active");
+}
+
+function countrySwitcherPopup(){
+  document.getElementById("popup-2").classList.toggle("active");
+}
+
+function shopNowPopup(){
+  document.getElementById("popup-3").classList.toggle("active");
+}
+
+function changeShippingLocationPopup(){
+  document.getElementById("popup-4").classList.toggle("active");
+}
+
+function savePopup(){
+  document.getElementById("popup-5").classList.toggle("active");
+}
+
+/*this is the function to save the choose from change shipping location page, that keep the choices and use in saved details page*/
+function countrySelect() {
+  var x = document.getElementById("countrySelect").value;
+  document.getElementById("demo1").innerHTML = x;
+}
+
+function currencySelect() {
+  var x = document.getElementById("currencySelect").value;
+  document.getElementById("demo2").innerHTML = x;
+}
+</script>
